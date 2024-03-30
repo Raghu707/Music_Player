@@ -11,6 +11,7 @@ const audioElement: HTMLAudioElement | any = document.querySelector('audio');
 @Component({
   standalone: true,
   templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css'],
   imports: [NgFor, NgIf],
 })
 
@@ -43,21 +44,21 @@ export class AboutComponent implements OnInit {
 
   songs: Song[] = [
     {
-      title: 'Song 1',
+      title: 'We Do not Talk Anymore',
       url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3',
-      artist: 'Artist 1',
+      artist: 'Charlie Puth',
       image: 'https://i1.sndcdn.com/artworks-000249294066-uow7s0-t500x500.jpg'
     },
     {
-      title: 'Song 2',
+      title: 'Let Her Go',
       url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3',
-      artist: 'Artist 1',
+      artist: 'Chris Vallejo',
       image: 'https://media.istockphoto.com/id/1496108471/de/foto/die-gipfel-des-matterhorns-spiegeln-sich-im-see.jpg?s=1024x1024&w=is&k=20&c=lBWaDm3LsLJHSA2INbLELxnQud5VwZpc3_Rr--Mqwyw='
     },
     {
-      title: 'Song 3',
+      title: 'Roar',
       url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3',
-      artist: 'Artist 1',
+      artist: 'Katy Perry',
       image: 'https://plus.unsplash.com/premium_photo-1680553489384-8e3230dd1073?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wyfHx8ZW58MHx8fHx8'
     }
   ];
