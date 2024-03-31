@@ -18,6 +18,6 @@ export class NavigationComponent implements AfterViewInit {
   constructor(private modalService: NgbModal) {
   }
   ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
 }
