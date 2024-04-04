@@ -15,7 +15,7 @@ const audioElement: HTMLAudioElement | any = document.querySelector('audio');
   imports: [NgFor, NgIf],
 })
 
-export class AboutComponent implements OnInit {
+export class musicComponent implements OnInit {
   @ViewChild('audioPlayer') audioPlayer: ElementRef | any
   currentTrackIndex: number = 0;
   nextsong1: any;
@@ -25,7 +25,6 @@ export class AboutComponent implements OnInit {
   isPlaying: boolean = false;
 
   constructor() {
-
   }
 
   ngOnInit() {

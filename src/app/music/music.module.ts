@@ -3,16 +3,16 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
 
-import { AboutComponent } from "./music.component";
+import { musicComponent } from "./music.component";
 
 const routes: Routes = [
   {
     path: "",
     data: {
       title: "About",
-      urls: [{ title: "About", url: "/about" }, { title: "About" }],
+      urls: [{ title: "Music", url: "/music" }, { title: "Music" }],
     },
-    component: AboutComponent,
+    component: musicComponent,
   },
 ];
 

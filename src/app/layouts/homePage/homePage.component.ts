@@ -2,9 +2,6 @@ import { CommonModule } from "@angular/common";
 import { Component, OnInit, HostListener } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 import { NgbCollapseModule } from "@ng-bootstrap/ng-bootstrap";
-import { NavigationComponent } from "src/app/shared/header/navigation.component";
-
-//declare var $: any;
 
 @Component({
   selector: "app-full-layout",
@@ -31,12 +28,10 @@ export class FullComponent implements OnInit {
    
  
   }
-
   @HostListener("window:resize", ["$event"])
   onResize() {
     this.handleSidebar();
   }
-
   handleSidebar() {
     this.innerWidth = window.innerWidth;
     if (this.innerWidth < 1170) {
@@ -45,7 +40,6 @@ export class FullComponent implements OnInit {
       this.sidebartype = this.defaultSidebar;
     }
   }
-
   toggleSidebarType() {
     switch (this.sidebartype) {
       case "full":
@@ -55,7 +49,6 @@ export class FullComponent implements OnInit {
       case "mini-sidebar":
         this.sidebartype = "full";
         break;
-
       default:
     }
   }

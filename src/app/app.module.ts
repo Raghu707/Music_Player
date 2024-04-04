@@ -9,12 +9,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FullComponent } from './layouts/homePage/homePage.component';
 import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SpinnerComponent } from './shared/spinner.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SpinnerComponent,
+    AppComponent,  
   ],
   imports: [
     CommonModule,

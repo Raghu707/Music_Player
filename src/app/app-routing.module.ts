@@ -8,7 +8,7 @@ export const Approutes: Routes = [
     path: '',
     component: FullComponent,
     children: [
-      { path: '', redirectTo: '/about', pathMatch: 'full' },
+      { path: '', redirectTo: '/music', pathMatch: 'full' },
       
       {
         path: 'about',
