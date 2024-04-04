@@ -10,7 +10,7 @@ import { NgbCollapseModule } from "@ng-bootstrap/ng-bootstrap";
   templateUrl: "./homePage.component.html",
   styleUrls: ["./homePage.component.scss"],
 })
-export class FullComponent implements OnInit {
+export class homeComponent implements OnInit {
 
   constructor(public router: Router) {}
   public isCollapsed = false;

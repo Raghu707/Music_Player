@@ -26,4 +26,4 @@ const routes: Routes = [
   declarations: [
   ],
 })
-export class AboutModule {}
+export class musicModule {}

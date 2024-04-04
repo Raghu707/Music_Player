@@ -1,18 +1,17 @@
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { FullComponent } from './layouts/homePage/homePage.component';
+import { homeComponent } from './layouts/homePage/homePage.component';
 
 export const Approutes: Routes = [
   {
     path: '',
-    component: FullComponent,
+    component: homeComponent,
     children: [
       { path: '', redirectTo: '/music', pathMatch: 'full' },
       
       {
-        path: 'about',
-        loadChildren: () => import('./music/music.module').then(m => m.AboutModule)
+        path: 'music',
+        loadChildren: () => import('./music/music.module').then(m => m.musicModule)
       },
       
     ]

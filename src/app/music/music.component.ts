@@ -1,13 +1,13 @@
 import { Component, ElementRef, OnInit, ViewChild, } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 
+// defining the interface
 interface Song {
   title: string;
   url: string;
   artist: string;
   image: string;
 }
-const audioElement: HTMLAudioElement | any = document.querySelector('audio');
 @Component({
   standalone: true,
   templateUrl: './music.component.html',
@@ -41,6 +41,7 @@ export class musicComponent implements OnInit {
     });
   }
 
+  // Data for Music player
   songs: Song[] = [
     {
       title: 'We Do not Talk Anymore',
@@ -61,23 +62,18 @@ export class musicComponent implements OnInit {
       image: 'https://plus.unsplash.com/premium_photo-1680553489384-8e3230dd1073?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wyfHx8ZW58MHx8fHx8'
     }
   ];
+
   currentSongIndex: number = 0;
   currentSong: Song = this.songs[this.currentSongIndex];
   isnotplaying: boolean = false;
 
 
+  // Restart function
   restart(): void {
     const audioElement: HTMLAudioElement | any = document.querySelector('audio');
     audioElement.currentTime = 0;
   }
-  seek(event: MouseEvent) {
-    const progressBar = event.target as HTMLDivElement;
-    const progressWidth = progressBar.offsetWidth;
-    const clickX = event.clientX - progressBar.offsetLeft;
-    const seekTime = (clickX / progressWidth) * this.duration;
-    this.audioPlayer.nativeElement.currentTime = seekTime;
-  }
-
+  // progress bar duration 
   formatTime(seconds: number): string {
     const pad = (num: number) => {
       return num < 10 ? '0' + num : num;
@@ -86,7 +82,7 @@ export class musicComponent implements OnInit {
     const remainingSeconds = Math.floor(seconds % 60);
     return pad(minutes) + ':' + pad(remainingSeconds);
   }
-
+// next song function
   nextSong(): void {
     this.currentSongIndex = (this.currentSongIndex + 1) % this.songs.length;
     this.currentSong = this.songs[this.currentSongIndex];
@@ -95,7 +91,7 @@ export class musicComponent implements OnInit {
     audioElement.autoplay = true;
     audioElement.play()
   }
-
+// previous song function
   previousSong(): void {
     this.currentSongIndex = (this.currentSongIndex - 1 + this.songs.length) % this.songs.length;
     this.currentSong = this.songs[this.currentSongIndex];
@@ -104,11 +100,12 @@ export class musicComponent implements OnInit {
     audioElement.autoplay = true;
     audioElement.play()
   }
+  // progress Bar
   updateProgressBar(): void {
     const audioElement: HTMLAudioElement | any = document.querySelector('audio');
     this.progress = (audioElement.currentTime / audioElement.duration) * 100;
   }
-
+// play and pause in one click function
   playPause(): void {
     this.isPlaying = !this.isPlaying;
     const audioElement: HTMLAudioElement | any = document.querySelector('audio');
