@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { FullComponent } from './layouts/full/full.component';
+import { FullComponent } from './layouts/homePage/homePage.component';
 
 export const Approutes: Routes = [
   {
@@ -12,7 +12,7 @@ export const Approutes: Routes = [
       
       {
         path: 'about',
-        loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
+        loadChildren: () => import('./music/music.module').then(m => m.AboutModule)
       },
       
     ]
